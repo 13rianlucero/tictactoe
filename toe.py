@@ -249,6 +249,8 @@ root.config(menu=my_menu)
 options_menu = Menu(my_menu, tearoff=False)
 my_menu.add_cascade(label="Options", menu=options_menu)
 options_menu.add_command(label="Reset Game", command=reset)
-options_menu.add_command(label="Light Mode", command=light)
+
+# IDEA TO CREATE A LIGHT MODE AND DARK MODE FOR THE BUTTONS/GUI
+# options_menu.add_command(label="Light Mode", command=light)
 
 root.mainloop()
