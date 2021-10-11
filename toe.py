@@ -4,7 +4,7 @@ from tkinter import messagebox
 root = Tk()
 root.title('Tic Tac Toe - Brian Lucero')
 root.iconbitmap('C:/Users/13ria/Documents/GitHub/tictactoe/bruh_nk3_icon.ico')
-#root.geometry("1200x710")
+#root.geometry("300x300")
 
 
 # X starts so true
@@ -23,6 +23,18 @@ def disable_all_buttons():
     b7.config(state=DISABLED)
     b8.config(state=DISABLED)
     b9.config(state=DISABLED)
+
+# enable all the buttons
+def activate_all_buttons():
+    b1.config(state=ACTIVE)
+    b2.config(state=ACTIVE)
+    b3.config(state=ACTIVE)
+    b4.config(state=ACTIVE)
+    b5.config(state=ACTIVE)
+    b6.config(state=ACTIVE)
+    b7.config(state=ACTIVE)
+    b8.config(state=ACTIVE)
+    b9.config(state=ACTIVE)
 
 # Check to see if someone won
 def checkifwon():
@@ -183,9 +195,11 @@ def reset():
 
     # Need to globalize all the game variables
     global b1, b2, b3, b4, b5, b6, b7, b8, b9
-    global clicked, count
+    global clicked, count, winner
     clicked = True
     count = 0
+    winner = False
+    activate_all_buttons()
     
     # Build our BUttons
     b1 = Button(root, text = " ", font = ("Helvetica", 20),  height=3, width=6, bg="SystemButtonFace", command=lambda: b_click(b1))
